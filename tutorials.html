@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, sinitial-scale=1.0">
+    <title>Rustblog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./img/rustblog_logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+
+    <div class="fixed w-[20%] h-full shadow-2xl">
+        <div class="flex items-center gap-2 py-8 px-3">
+            <img src="./img/rustblog_logo.png" class="w-[50px] h-[50px]" alt="">
+            <h1 class="font-bold text-xl text-[#fc533b]">Rustblog</h1>
+        </div>
+        <div class="flex flex-col mt-10 tabs">
+            <div class="px-2 py-4 tab cursor-pointer">
+                <h1 class="text-gray-200 text-sm font-bold pl-5">Introduction</h1>
+            </div>
+            <div class="px-2 py-4 tab cursor-pointer">
+                <h1 class="text-gray-200 text-sm font-bold pl-5">Data Types</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="ml-[20%] pl-10 tab-contents">
+        <div class="py-20 tab-content">
+            <h1 class="font-bold text-gray-200">Introduction</h1>
+        </div>
+        <div class="py-20 tab-content hidden">
+            <h1 class="font-bold text-gray-200">Data Types</h1>
+        </div>
+    </div>
+
+    <script>
+
+        let content = [
+            {
+                "title": "Introduction",
+                "content": "Rust is fast, memory safe programming language."
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+        ]
+
+        let titles = document.querySelector(".tabs"); 
+        for(let i=0;i<content.length; i++){
+            titles.innerHTML += `<div class='px-2 py-4 tab cursor-pointer'>
+                <h1 class='text-gray-200 text-sm font-bold pl-5'>${content[i].title}</h1>
+            </div>`;
+        }
+
+        let contents = document.querySelector(".tab-contents"); 
+        for(let i=0;i<content.length; i++){
+            contents.innerHTML += `<div class='py-20 tab-content hidden'>
+                <h1 class='text-gray-200 text-sm font-bold pl-5'>${content[i].content}</h1>
+            </div>`;
+        }
+       
+    
+        let tabs = document.querySelectorAll(".tab");
+        let tabContent = document.querySelectorAll(".tab-content");
+
+
+        tabs.forEach((tab, index)=>{
+            tabs[index].addEventListener("click", function(){
+                localStorage.setItem("activeTab", index);
+                for(let i=0; i<tabContent.length; i++){
+                    tabContent[i].classList.add("hidden");
+                }
+                tabContent[index].classList.remove("hidden");
+            })
+        })
+
+        
+        for(let i=0; i<tabContent.length; i++){
+            tabContent[i].classList.add("hidden");
+        }
+        tabContent[localStorage.getItem("activeTab")].classList.remove("hidden");
+    
+    </script>
+    
+
+</body>
+
+</html>
+
+
+
+</body>
+</html>

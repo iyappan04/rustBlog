@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, sinitial-scale=1.0">
+    <title>Rustblog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="./img/rustblog_logo.png" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+
+
+    <div class="sticky top-0 z-50 bg-black lg:bg-inherit bg-opacity-40 lg:bg-opacity-40 header">
+        <div class="container mx-auto max-w-screen-2xl px-6 py-3 flex flex-col lg:flex-row lg:items-center justify-between gap-10">
+            <div class="flex gap-2 justify-between">
+                <div class="flex items-center gap-2">
+                    <img src="./img/rustblog_logo.png" alt="">
+                    <h1 class="font-bold text-xl text-[#fc533b]">Rustblog</h1>
+                </div>
+                <div class="flex lg:hidden items-center cursor-pointer" onclick="navToggle()">
+                    <div class="flex flex-col font-bold gap-1 open">
+                        <div class="w-[20px] h-[3px] text-[#fc533b] bg-[#fc533b]"></div>
+                        <div class="w-[20px] h-[3px] text-[#fc533b] bg-[#fc533b]"></div>
+                        <div class="w-[20px] h-[3px] text-[#fc533b] bg-[#fc533b]"></div>
+                    </div>
+                    <div class="close hidden">
+                        <p class="font-bold text-2xl text-[#fc533b]">x</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden flex lg:flex flex-col lg:flex-row items-center gap-10 menu">
+                <div class="cursor-pointer" onclick="scolltoSection('home')">
+                    <p class="font-bold text-sm text-[#fc533b]">Home</p>
+                </div>
+                <div class="cursor-pointer" onclick="scolltoSection('about')">
+                    <p class="font-bold text-sm text-[#fc533b]">About</p>
+                </div>
+                <div class="cursor-pointer" onclick="scolltoSection('features')">
+                    <p class="font-bold text-sm text-[#fc533b]">Features</p>
+                </div>
+                <div>
+                    <button class="bg-[#fc533b] text-gray-300 font-bold rounded-full px-3 py-2">Get Started</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto max-w-screen-2xl px-6 h-[50vh] h-fit" id="home">
+
+        <div class="flex flex-col items-center justify-center w-full h-[50rem] gap-6">
+            <img src="./img/rustblog_logo.png" alt="">
+            <h1 class="text-2xl lg:text-4xl xl:text-6xl font-bold text-[#fc533b] text-center">Learn Rust With <br/> Ease.</h1>
+            <button class="bg-[#fc533b] text-gray-300 font-bold rounded-full px-3 py-2 mt-4">Get Started</button>
+        </div>
+
+    </div>
+
+    <div class="container mx-auto max-w-screen-2xl py-10 lg:py-10" id="about">
+
+        <div class="flex flex-col w-full gap-6 flex items-center justify-center">
+           
+            <div class="grid lg:grid-cols-2 gap-10 items-center py-16 w-[90%]">
+                <div class="flex flex-col gap-4">
+                    <h1 class="text-[2rem] lg:text-[4rem] font-bold text-[#fc533b]">Rust Programming Language</h1>
+                    <p class="text-base text-gray-300 font-bold">Rust is a multi-paradigm, general-purpose programming language that emphasizes performance, type safety, and concurrency</p>
+                </div>
+                <div class="flex flex-col gap-4">
+
+                    <p class="underline font-bold text-[#fc533b] text-xl">HelloWorld.rs</p>
+
+                    <p class="text-xl text-base text-gray-300 font-bold">fn main(){ <br/> 
+                       <span class="ml-10 font-bold">println!("Hello World");</span>
+                        <br/> 
+                    }
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container mx-auto max-w-screen-2xl py-10 lg:py-20" id="features">
+
+        <div class="flex flex-col w-full gap-6">
+            <h1 class="text-2xl font-bold text-[#fc533b] text-center">Features of Rust</h1>
+            <div class="grid lg:grid-cols-3 gap-10 py-16">
+                <div class="flex flex-col gap-2 items-center justify-center">
+                    <img src="./img/fast.png" class="w-[100px] h-[100px] object-cover" alt="">
+                    <h1 class="text-gray-300 font-bold rounded-full px-3 py-2 mt-4">Fast</h1>
+                </div>
+                <div class="flex flex-col gap-2 items-center justify-center">
+                    <img src="./img/safety.png" class="w-[100px] h-[100px] object-cover" alt="">
+                    <h1 class="text-gray-300 font-bold rounded-full px-3 py-2 mt-4">Memory Safety</h1>
+                </div>
+                <div class="flex flex-col gap-2 items-center justify-center">
+                    <img src="./img/concurrent.png" class="w-[100px] h-[100px] object-cover" alt="">
+                    <h1 class="text-gray-300 font-bold rounded-full px-3 py-2 mt-4">Concurrent Programming</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+   
+    <div class="sticky top-0 z-50 bg-opacity-60">
+        <div class="container mx-auto max-w-screen-2xl px-6 py-10">
+            <div class="flex items-center justify-center gap-2">
+                <img src="./img/rustblog_logo.png" alt="">
+                <h1 class="font-bold text-xl text-[#fc533b]">Rustblog</h1>
+            </div>
+            <div class="flex items-center justify-center">
+                <h1 class="text-gray-300 font-bold rounded-full px-3 py-2 text-center">Copyright @ 2024</h1>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+
+        function navToggle(){
+            let menu = document.querySelector(".menu");
+            let open = document.querySelector(".open");
+            let close = document.querySelector(".close");
+
+            menu.classList.toggle("hidden");
+            open.classList.toggle("hidden");
+            close.classList.toggle("hidden");
+        }
+
+
+
+        window.addEventListener("scroll", function(){
+            let header = document.querySelector(".header");
+
+            if(window.scrollY > 50){
+                header.classList.add('lg:bg-black');
+                console.log("Hello");
+            }
+            else{
+                header.classList.remove('lg:bg-black');
+            }
+        })
+
+        function scolltoSection(name){
+            let value = document.getElementById(name).offsetTop - 90;
+            window.scrollTo(0, value);
+        }
+
+    </script>
+
+</body>
+
+</html>
