@@ -25,10 +25,10 @@
         </div>
         <div class="flex flex-col mt-10 tabs">
             <!-- <div class="px-2 py-4 tab cursor-pointer">
-                <h1 class="text-gray-200 text-sm font-bold pl-5">Introduction</h1>
+                <h1 class="text-gray-500 text-sm font-bold pl-5">Introduction</h1>
             </div>
             <div class="px-2 py-4 tab cursor-pointer">
-                <h1 class="text-gray-200 text-sm font-bold pl-5">Data Types</h1>
+                <h1 class="text-gray-500 text-sm font-bold pl-5">Data Types</h1>
             </div> -->
         </div>
     </div>
@@ -36,10 +36,10 @@
 
     <div class="ml-[20%] pl-10 tab-contents">
         <!-- <div class="py-20 tab-content">
-            <h1 class="font-bold text-gray-200">Introduction</h1>
+            <h1 class="font-bold text-gray-500">Introduction</h1>
         </div>
         <div class="py-20 tab-content hidden">
-            <h1 class="font-bold text-gray-200">Data Types</h1>
+            <h1 class="font-bold text-gray-500">Data Types</h1>
         </div> -->
     </div>
 
@@ -54,128 +54,9 @@
                 "title": "Hello World",
                 "content": "Rust is fast, memory safe programming language. 2",
                 "code": `
-                fn main(){
-                    println!("Hello World");
-                }`
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },
-            {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
-            },   {
-                "title": "Introduction 1",
-                "content": "Rust is fast, memory safe programming language. 2"
+fn main(){
+    println!("Hello World");
+}`
             },
 
         ]
@@ -183,15 +64,15 @@
         let titles = document.querySelector(".tabs"); 
         for(let i=0;i<content.length; i++){
             titles.innerHTML += `<div class='px-2 py-4 tab cursor-pointer'>
-                <h1 class='text-gray-200 text-sm font-bold pl-5'>${content[i].title}</h1>
+                <h1 class='text-gray-500 text-sm font-bold pl-5'>${content[i].title}</h1>
             </div>`;
         }
 
         let contents = document.querySelector(".tab-contents"); 
         for(let i=0;i<content.length; i++){
             contents.innerHTML += `<div class='py-20 tab-content hidden'>
-                <h1 class='text-gray-200 text-sm font-bold pl-5'>${content[i].content}</h1>
-                <p class="code bg-black p-2 border-l-2 border-l-white w-[40%] my-5 text-white font-bold">${content[i].code}</p>
+                <h1 class='text-gray-500 text-sm font-bold'>${content[i].content}</h1>
+                <pre class="code bg-black p-2 border-l-2 border-l-2 border-red-400 w-[40%] my-5 text-white font-bold">${content[i].code}</pre>
             </div>`;
         }
        
