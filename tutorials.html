@@ -18,29 +18,29 @@
 <body>
 
 
-    <div class="fixed w-[20%] h-full shadow-2xl">
-        <div class="flex items-center gap-2 py-8 px-3">
-            <img src="./img/rustblog_logo.png" class="w-[50px] h-[50px]" alt="">
-            <h1 class="font-bold text-xl text-[#fc533b]">Rustblog</h1>
+    <div class="fixed w-[20%] h-full shadow-2xl overflow-y-auto">
+        <div class="flex items-center gap-2 py-4 px-3">
+            <img src="./img/rustlanh.png" class="w-[50px] h-[50px]" alt="">
+            <h1 class="font-bold text-xl text-[#363636]">Rustlang</h1>
         </div>
         <div class="flex flex-col mt-10 tabs">
-            <div class="px-2 py-4 tab cursor-pointer">
+            <!-- <div class="px-2 py-4 tab cursor-pointer">
                 <h1 class="text-gray-200 text-sm font-bold pl-5">Introduction</h1>
             </div>
             <div class="px-2 py-4 tab cursor-pointer">
                 <h1 class="text-gray-200 text-sm font-bold pl-5">Data Types</h1>
-            </div>
+            </div> -->
         </div>
     </div>
 
 
     <div class="ml-[20%] pl-10 tab-contents">
-        <div class="py-20 tab-content">
+        <!-- <div class="py-20 tab-content">
             <h1 class="font-bold text-gray-200">Introduction</h1>
         </div>
         <div class="py-20 tab-content hidden">
             <h1 class="font-bold text-gray-200">Data Types</h1>
-        </div>
+        </div> -->
     </div>
 
     <script>
@@ -51,9 +51,133 @@
                 "content": "Rust is fast, memory safe programming language."
             },
             {
+                "title": "Hello World",
+                "content": "Rust is fast, memory safe programming language. 2",
+                "code": `
+                fn main(){
+                    println!("Hello World");
+                }`
+            },
+            {
                 "title": "Introduction 1",
                 "content": "Rust is fast, memory safe programming language. 2"
             },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+            {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },   {
+                "title": "Introduction 1",
+                "content": "Rust is fast, memory safe programming language. 2"
+            },
+
         ]
 
         let titles = document.querySelector(".tabs"); 
@@ -67,6 +191,7 @@
         for(let i=0;i<content.length; i++){
             contents.innerHTML += `<div class='py-20 tab-content hidden'>
                 <h1 class='text-gray-200 text-sm font-bold pl-5'>${content[i].content}</h1>
+                <p class="code bg-black p-2 border-l-2 border-l-white w-[40%] my-5 text-white font-bold">${content[i].code}</p>
             </div>`;
         }
        
@@ -89,7 +214,11 @@
         for(let i=0; i<tabContent.length; i++){
             tabContent[i].classList.add("hidden");
         }
+
         tabContent[localStorage.getItem("activeTab")].classList.remove("hidden");
+
+
+        
     
     </script>
     

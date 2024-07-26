@@ -6,10 +6,21 @@
     scroll-behavior: smooth !important;
 }
 
+::-webkit-scrollbar {
+    width: 6px;
+}
+                        
+::-webkit-scrollbar-thumb {
+    background: #fc533b;
+    -webkit-box-shadow: inset 0 0 6px #fc533b; 
+}
+
+
 body{
-    background-image: url('../img/dark_bg.png');
-    background-position: center;
+    /* background-color: #2d2e2e; */
+    /* background-image: url('../img/dark_bg.png'); */
+    /* background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    scroll-behavior: smooth !important;
+    scroll-behavior: smooth !important; */
 }
